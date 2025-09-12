@@ -10,7 +10,7 @@ const AboutSection = () => {
           <div className="order-2 lg:order-1">
             <img 
               src={craftsmanImage} 
-              alt="Craftsman's hands working with oak wood"
+              alt="Indian craftsman's hands working with traditional materials"
               className="w-full h-[500px] object-cover rounded-lg shadow-soft"
             />
           </div>
@@ -18,18 +18,17 @@ const AboutSection = () => {
           {/* Content */}
           <div className="order-1 lg:order-2 space-y-6">
             <h2 className="text-3xl font-bold text-foreground">
-              Rooted in Quality
+              Rooted in Tradition
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At Oak, we believe your home should be a sanctuary. We source the finest 
-              natural materials and partner with skilled artisans to create timeless pieces 
-              that bring warmth, character, and tranquility to your space.
+              At DecoMart, we believe your home should reflect India's rich cultural heritage. 
+              We source the finest natural materials and partner with skilled artisans across 
+              India to create authentic pieces that bring warmth, character, and tradition to your space.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Every piece in our collection tells a story of craftsmanship, sustainability, 
-              and the enduring beauty found in nature's simplest forms. From hand-turned 
-              wooden bowls to carefully glazed ceramic vessels, each item is chosen for 
-              its ability to transform a house into a home.
+              Every product tells a story of craftsmanship passed down through generations, 
+              combining traditional techniques with contemporary design to create timeless home decor 
+              that celebrates India's artistic legacy.
             </p>
             <Button variant="hero" size="lg">
               Learn Our Story

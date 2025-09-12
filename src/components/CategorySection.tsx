@@ -8,28 +8,28 @@ import woodenTray from "@/assets/wooden-tray.jpg";
 
 const categories = [
   { 
-    name: "Ceramic Art", 
-    items: "12 Items", 
+    name: "Wood Decor", 
+    items: "24 Items", 
     image: eliasVase 
   },
   { 
-    name: "Literature Art", 
-    items: "8 Items", 
+    name: "Ceramic Items", 
+    items: "18 Items", 
     image: ceramicBowl 
   },
   { 
     name: "Wall Art", 
-    items: "15 Items", 
+    items: "32 Items", 
     image: forestPrint 
   },
   { 
     name: "Planters", 
-    items: "9 Items", 
+    items: "15 Items", 
     image: ceramicPlanter 
   },
   { 
-    name: "Wooden Art", 
-    items: "20 Items", 
+    name: "Statues", 
+    items: "28 Items", 
     image: woodenTray 
   },
 ];

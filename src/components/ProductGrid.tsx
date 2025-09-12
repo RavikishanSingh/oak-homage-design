@@ -10,9 +10,9 @@ import ceramicPlanter from "@/assets/ceramic-planter.jpg";
 const products = [
   {
     id: 1,
-    name: "Elias Ceramic Vase",
-    category: "Ceramic Pottery Vase",
-    price: 89.00,
+    name: "Wooden Key Holder",
+    category: "Wood Home Decor",
+    price: 899.00,
     originalPrice: null,
     image: eliasVase,
     rating: 5,
@@ -20,29 +20,29 @@ const products = [
   },
   {
     id: 2,
-    name: "Artisan Bowl Set",
-    category: "Ceramic Pottery Set",
-    price: 120.00,
-    originalPrice: null,
+    name: "Ceramic Flower Pot",
+    category: "Indoor Planters",
+    price: 649.00,
+    originalPrice: 899.00,
     image: ceramicBowl,
     rating: 5,
-    discount: null
+    discount: "28% OFF"
   },
   {
     id: 3,
-    name: "Acorn Coasters",
-    category: "Oak Wood Coasters",
-    price: 45.00,
-    originalPrice: 65.00,
+    name: "Brass Statue",
+    category: "Religious Decor",
+    price: 2499.00,
+    originalPrice: 3299.00,
     image: acornCoasters,
     rating: 5,
-    discount: "3% OFF"
+    discount: "24% OFF"
   },
   {
     id: 4,
-    name: "Amber Soy Candle",
-    category: "Scented Candle",
-    price: 35.00,
+    name: "Wall Art Frame",
+    category: "Wall Decoration",
+    price: 1299.00,
     originalPrice: null,
     image: soyCandle,
     rating: 4,
@@ -50,9 +50,9 @@ const products = [
   },
   {
     id: 5,
-    name: "Terra Planter",
-    category: "Ceramic Planter",
-    price: 55.00,
+    name: "Decorative Bowl",
+    category: "Table Decor",
+    price: 799.00,
     originalPrice: null,
     image: ceramicPlanter,
     rating: 5,
@@ -75,9 +75,9 @@ const ProductGrid = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <div className="flex gap-8">
-            <button className="text-foreground border-b-2 border-oak-warm pb-2 font-medium">Literature Art</button>
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Theater Art</button>
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Ceramics Art</button>
+            <button className="text-foreground border-b-2 border-oak-warm pb-2 font-medium">Wood Decor</button>
+            <button className="text-muted-foreground hover:text-foreground transition-colors">Ceramic Items</button>
+            <button className="text-muted-foreground hover:text-foreground transition-colors">Wall Art</button>
           </div>
         </div>
 
@@ -109,10 +109,10 @@ const ProductGrid = () => {
                 </div>
                 
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="font-bold text-foreground">${product.price.toFixed(2)}</span>
+                  <span className="font-bold text-foreground">₹{product.price.toFixed(0)}</span>
                   {product.originalPrice && (
                     <span className="text-sm text-muted-foreground line-through">
-                      ${product.originalPrice.toFixed(2)}
+                      ₹{product.originalPrice.toFixed(0)}
                     </span>
                   )}
                 </div>

@@ -7,12 +7,12 @@ const Header = () => {
       {/* Top Bar */}
       <div className="border-b border-border bg-muted/30 px-6 py-2">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-xs text-muted-foreground">
-          <span>Call Us Free 24/7: (555) 123-456-789</span>
+          <span>Call Us Free 24/7: +91 98765 43210</span>
           <div className="flex items-center gap-4">
-            <span>Contact Us</span>
+            <span>Free Shipping</span>
             <span>Today's Deal</span>
-            <span>USD</span>
-            <span>English</span>
+            <span>INR ₹</span>
+            <span>Hindi | English</span>
           </div>
         </div>
       </div>
@@ -23,16 +23,15 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-oak-warm rounded-full"></div>
-            <span className="text-2xl font-bold text-foreground">Oak</span>
+            <span className="text-2xl font-bold text-foreground">DecoMart</span>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-foreground hover:text-oak-warm transition-colors">Shop</a>
-            <a href="#" className="text-foreground hover:text-oak-warm transition-colors">New Arrivals</a>
-            <a href="#" className="text-foreground hover:text-oak-warm transition-colors">Collections</a>
-            <a href="#" className="text-foreground hover:text-oak-warm transition-colors">Our Story</a>
-            <a href="#" className="text-foreground hover:text-oak-warm transition-colors">Contact</a>
+            <a href="/shop" className="text-foreground hover:text-oak-warm transition-colors">Shop</a>
+            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Categories</a>
+            <a href="/about" className="text-foreground hover:text-oak-warm transition-colors">About Us</a>
+            <a href="/contact" className="text-foreground hover:text-oak-warm transition-colors">Contact</a>
           </nav>
 
           {/* Right Icons */}

@@ -13,18 +13,18 @@ const FeaturedProducts = () => {
           <div className="order-2 lg:order-1">
             <img 
               src={acornCoasters} 
-              alt="Acorn wooden coasters"
+              alt="Wooden key holders"
               className="w-full h-[400px] object-cover rounded-lg shadow-soft"
             />
           </div>
           <div className="order-1 lg:order-2 space-y-6">
-            <Badge className="bg-oak-light text-oak-charcoal">Flat Discount 30%</Badge>
+            <Badge className="bg-oak-light text-oak-charcoal">Special Discount 35%</Badge>
             <h3 className="text-3xl font-bold text-foreground">
-              Acorn Wooden Coasters
+              Handcrafted Wooden Key Holders
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Handcrafted from premium oak wood, these coasters bring natural warmth 
-              to your home while protecting your surfaces with timeless style.
+              Traditional Indian wooden key holders crafted by skilled artisans from 
+              premium Sheesham wood, adding natural warmth to your entryway.
             </p>
             <Button variant="hero">Shop Now</Button>
           </div>
@@ -35,15 +35,15 @@ const FeaturedProducts = () => {
           {/* Stone Coasters */}
           <div className="bg-oak-cream/30 rounded-lg p-8 relative overflow-hidden">
             <div className="relative z-10">
-              <Badge className="bg-oak-warm text-white mb-4">25% Discount</Badge>
+              <Badge className="bg-oak-warm text-white mb-4">30% Discount</Badge>
               <h4 className="text-xl font-bold text-foreground mb-2">
-                Natural Stone Coasters
+                Ceramic Flower Pots
               </h4>
               <Button variant="outline" size="sm">Shop Now</Button>
             </div>
             <img 
               src={stoneCoasters} 
-              alt="Natural stone coasters"
+              alt="Ceramic flower pots"
               className="absolute right-0 top-0 w-1/2 h-full object-cover"
             />
           </div>
@@ -51,15 +51,15 @@ const FeaturedProducts = () => {
           {/* Soy Candle */}
           <div className="bg-oak-light/40 rounded-lg p-8 relative overflow-hidden">
             <div className="relative z-10">
-              <Badge className="bg-oak-warm text-white mb-4">35% Discount</Badge>
+              <Badge className="bg-oak-warm text-white mb-4">40% Discount</Badge>
               <h4 className="text-xl font-bold text-foreground mb-2">
-                Artisan Soy Candles
+                Brass Wall Decor
               </h4>
               <Button variant="outline" size="sm">Shop Now</Button>
             </div>
             <img 
               src={soyCandle} 
-              alt="Artisan soy candle"
+              alt="Brass wall decor"
               className="absolute right-0 top-0 w-1/2 h-full object-cover"
             />
           </div>
