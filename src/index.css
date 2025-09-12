@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Oak Design System - Natural, Warm, Premium */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors */
+    --background: 42 15% 97%;
+    --foreground: 25 15% 20%;
 
+    /* Card colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 15% 20%;
 
+    /* Popover colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Warm Oak */
+    --primary: 28 35% 45%;
+    --primary-foreground: 42 15% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light Oak */
+    --secondary: 38 25% 85%;
+    --secondary-foreground: 25 15% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Stone */
+    --muted: 40 12% 92%;
+    --muted-foreground: 25 8% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Honey */
+    --accent: 35 45% 75%;
+    --accent-foreground: 25 15% 20%;
 
+    /* Destructive */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs */
+    --border: 40 12% 88%;
+    --input: 40 12% 92%;
+    --ring: 28 35% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Oak-specific design tokens */
+    --oak-warm: 28 45% 60%;
+    --oak-light: 42 35% 88%;
+    --oak-cream: 45 20% 95%;
+    --oak-stone: 40 8% 75%;
+    --oak-charcoal: 25 15% 25%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(var(--oak-warm)), hsl(var(--oak-light)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--oak-cream)), hsl(var(--background)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--oak-stone) / 0.25);
+    --shadow-elegant: 0 8px 30px -8px hsl(var(--oak-warm) / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +81,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 25 15% 12%;
+    --foreground: 42 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 15% 15%;
+    --card-foreground: 42 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 15% 15%;
+    --popover-foreground: 42 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 35 45% 75%;
+    --primary-foreground: 25 15% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 12% 25%;
+    --secondary-foreground: 42 15% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 12% 20%;
+    --muted-foreground: 40 8% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 28 35% 45%;
+    --accent-foreground: 42 15% 95%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 25 12% 25%;
+    --input: 25 12% 20%;
+    --ring: 35 45% 75%;
+
+    /* Dark mode oak tokens */
+    --oak-warm: 35 45% 70%;
+    --oak-light: 28 25% 35%;
+    --oak-cream: 25 15% 18%;
+    --oak-stone: 25 8% 45%;
+    --oak-charcoal: 42 15% 90%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
