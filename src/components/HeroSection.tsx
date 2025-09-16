@@ -17,7 +17,7 @@ const HeroSection = () => {
             Premium candles, elegant home decor gift packs & beautiful jewelry for every occasion.
           </p>
           <Button variant="hero" size="lg" className="mt-8">
-            Shop Collection
+            <a href="/shop" className="text-white">Shop Collection</a>
           </Button>
         </div>
 

@@ -10,27 +10,32 @@ const categories = [
   { 
     name: "Premium Candles", 
     items: "45 Items", 
-    image: premiumCandles 
+    image: premiumCandles,
+    slug: "candles"
   },
   { 
     name: "Earrings", 
     items: "128 Items", 
-    image: earringsCollection 
+    image: earringsCollection,
+    slug: "jewelry"
   },
   { 
     name: "Gift Packs", 
     items: "32 Items", 
-    image: giftPacks 
+    image: giftPacks,
+    slug: "gift-packs"
   },
   { 
     name: "Tea Lights", 
     items: "24 Items", 
-    image: teaLights 
+    image: teaLights,
+    slug: "candles"
   },
   { 
     name: "Home Decor", 
     items: "18 Items", 
-    image: ceramicBowl 
+    image: ceramicBowl,
+    slug: "gift-packs"
   },
 ];
 
@@ -52,7 +57,7 @@ const CategorySection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {categories.map((category, index) => (
-            <div key={index} className="group cursor-pointer">
+            <a key={index} href={`/categories/${category.slug}`} className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg bg-oak-cream/30 aspect-square mb-4">
                 <img 
                   src={category.image} 
@@ -64,7 +69,7 @@ const CategorySection = () => {
                 <h3 className="font-semibold text-foreground mb-1">{category.name}</h3>
                 <p className="text-sm text-muted-foreground">({category.items})</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

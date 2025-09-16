@@ -23,15 +23,14 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-oak-warm rounded-full"></div>
-            <span className="text-2xl font-bold text-foreground">DecoMart</span>
+            <span className="text-2xl font-bold text-foreground">OAK</span>
           </div>
 
-          {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="/shop" className="text-foreground hover:text-oak-warm transition-colors">Shop</a>
-            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Candles</a>
-            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Jewelry</a>
-            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Gift Packs</a>
+            <a href="/categories/candles" className="text-foreground hover:text-oak-warm transition-colors">Candles</a>
+            <a href="/categories/jewelry" className="text-foreground hover:text-oak-warm transition-colors">Jewelry</a>
+            <a href="/categories/gift-packs" className="text-foreground hover:text-oak-warm transition-colors">Gift Packs</a>
             <a href="/about" className="text-foreground hover:text-oak-warm transition-colors">About</a>
             <a href="/contact" className="text-foreground hover:text-oak-warm transition-colors">Contact</a>
           </nav>

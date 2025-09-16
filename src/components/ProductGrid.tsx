@@ -75,9 +75,9 @@ const ProductGrid = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <div className="flex gap-8">
-            <button className="text-foreground border-b-2 border-oak-warm pb-2 font-medium">Premium Candles</button>
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Designer Jewelry</button>
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Gift Packs</button>
+            <a href="/categories/candles" className="text-foreground border-b-2 border-oak-warm pb-2 font-medium">Premium Candles</a>
+            <a href="/categories/jewelry" className="text-muted-foreground hover:text-foreground transition-colors">Designer Jewelry</a>
+            <a href="/categories/gift-packs" className="text-muted-foreground hover:text-foreground transition-colors">Gift Packs</a>
           </div>
         </div>
 
@@ -118,8 +118,10 @@ const ProductGrid = () => {
                 </div>
                 
                 <Button size="sm" className="w-full bg-oak-warm hover:bg-oak-warm/90 text-white">
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Add To Cart
+                  <a href={`/product/${product.id === 1 ? 'lavender-candle' : 'gold-earrings'}`} className="flex items-center">
+                    <ShoppingCart className="w-4 h-4 mr-2" />
+                    View Product
+                  </a>
                 </Button>
               </div>
             </div>

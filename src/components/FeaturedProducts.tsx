@@ -26,7 +26,9 @@ const FeaturedProducts = () => {
               Handcrafted premium candles with long-lasting fragrances. Made from natural 
               soy wax in elegant glass containers to create the perfect ambiance for your home.
             </p>
-            <Button variant="hero">Shop Now</Button>
+            <Button variant="hero">
+              <a href="/shop" className="text-white">Shop Now</a>
+            </Button>
           </div>
         </div>
 
@@ -39,7 +41,9 @@ const FeaturedProducts = () => {
               <h4 className="text-xl font-bold text-foreground mb-2">
                 Designer Earrings
               </h4>
-              <Button variant="outline" size="sm">Shop Now</Button>
+              <Button variant="outline" size="sm">
+                <a href="/categories/jewelry">Shop Now</a>
+              </Button>
             </div>
             <img 
               src={earringsCollection} 
@@ -55,7 +59,9 @@ const FeaturedProducts = () => {
               <h4 className="text-xl font-bold text-foreground mb-2">
                 Gift Packs
               </h4>
-              <Button variant="outline" size="sm">Shop Now</Button>
+              <Button variant="outline" size="sm">
+                <a href="/categories/gift-packs">Shop Now</a>
+              </Button>
             </div>
             <img 
               src={giftPacks} 

@@ -21,7 +21,7 @@ const AboutSection = () => {
               Crafted with Love
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              At DecoMart, we believe your space should reflect beauty and elegance. 
+              At OAK, we believe your space should reflect beauty and elegance. 
               We create premium candles, curate stunning jewelry, and design beautiful gift packs 
               that bring warmth, style, and joy to your everyday moments.
             </p>
@@ -31,7 +31,7 @@ const AboutSection = () => {
               to create magical experiences for you and your loved ones.
             </p>
             <Button variant="hero" size="lg">
-              Learn Our Story
+              <a href="/about" className="text-white">Learn Our Story</a>
             </Button>
           </div>
         </div>
