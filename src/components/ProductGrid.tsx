@@ -10,9 +10,9 @@ import ceramicPlanter from "@/assets/ceramic-planter.jpg";
 const products = [
   {
     id: 1,
-    name: "Wooden Key Holder",
-    category: "Wood Home Decor",
-    price: 899.00,
+    name: "Lavender Scented Candle",
+    category: "Premium Candles",
+    price: 1299.00,
     originalPrice: null,
     image: eliasVase,
     rating: 5,
@@ -20,29 +20,29 @@ const products = [
   },
   {
     id: 2,
-    name: "Ceramic Flower Pot",
-    category: "Indoor Planters",
-    price: 649.00,
-    originalPrice: 899.00,
+    name: "Gold Drop Earrings",
+    category: "Designer Jewelry",
+    price: 2499.00,
+    originalPrice: 3499.00,
     image: ceramicBowl,
     rating: 5,
-    discount: "28% OFF"
+    discount: "29% OFF"
   },
   {
     id: 3,
-    name: "Brass Statue",
-    category: "Religious Decor",
-    price: 2499.00,
-    originalPrice: 3299.00,
+    name: "Home Decor Gift Pack",
+    category: "Gift Collections",
+    price: 1899.00,
+    originalPrice: 2499.00,
     image: acornCoasters,
     rating: 5,
     discount: "24% OFF"
   },
   {
     id: 4,
-    name: "Wall Art Frame",
-    category: "Wall Decoration",
-    price: 1299.00,
+    name: "Tea Light Set",
+    category: "Candle Collection",
+    price: 899.00,
     originalPrice: null,
     image: soyCandle,
     rating: 4,
@@ -50,9 +50,9 @@ const products = [
   },
   {
     id: 5,
-    name: "Decorative Bowl",
-    category: "Table Decor",
-    price: 799.00,
+    name: "Silver Hoop Earrings",
+    category: "Fashion Jewelry",
+    price: 1599.00,
     originalPrice: null,
     image: ceramicPlanter,
     rating: 5,
@@ -75,9 +75,9 @@ const ProductGrid = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <div className="flex gap-8">
-            <button className="text-foreground border-b-2 border-oak-warm pb-2 font-medium">Wood Decor</button>
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Ceramic Items</button>
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Wall Art</button>
+            <button className="text-foreground border-b-2 border-oak-warm pb-2 font-medium">Premium Candles</button>
+            <button className="text-muted-foreground hover:text-foreground transition-colors">Designer Jewelry</button>
+            <button className="text-muted-foreground hover:text-foreground transition-colors">Gift Packs</button>
           </div>
         </div>
 

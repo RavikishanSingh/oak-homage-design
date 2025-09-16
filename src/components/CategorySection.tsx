@@ -1,36 +1,36 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import eliasVase from "@/assets/elias-vase.jpg";
+import premiumCandles from "@/assets/premium-candles.jpg";
+import earringsCollection from "@/assets/earrings-collection.jpg";
+import giftPacks from "@/assets/gift-packs.jpg";
+import teaLights from "@/assets/tea-lights.jpg";
 import ceramicBowl from "@/assets/ceramic-bowl.jpg";
-import forestPrint from "@/assets/forest-print.jpg";
-import ceramicPlanter from "@/assets/ceramic-planter.jpg";
-import woodenTray from "@/assets/wooden-tray.jpg";
 
 const categories = [
   { 
-    name: "Wood Decor", 
-    items: "24 Items", 
-    image: eliasVase 
+    name: "Premium Candles", 
+    items: "45 Items", 
+    image: premiumCandles 
   },
   { 
-    name: "Ceramic Items", 
+    name: "Earrings", 
+    items: "128 Items", 
+    image: earringsCollection 
+  },
+  { 
+    name: "Gift Packs", 
+    items: "32 Items", 
+    image: giftPacks 
+  },
+  { 
+    name: "Tea Lights", 
+    items: "24 Items", 
+    image: teaLights 
+  },
+  { 
+    name: "Home Decor", 
     items: "18 Items", 
     image: ceramicBowl 
-  },
-  { 
-    name: "Wall Art", 
-    items: "32 Items", 
-    image: forestPrint 
-  },
-  { 
-    name: "Planters", 
-    items: "15 Items", 
-    image: ceramicPlanter 
-  },
-  { 
-    name: "Statues", 
-    items: "28 Items", 
-    image: woodenTray 
   },
 ];
 

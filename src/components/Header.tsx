@@ -29,8 +29,10 @@ const Header = () => {
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="/shop" className="text-foreground hover:text-oak-warm transition-colors">Shop</a>
-            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Categories</a>
-            <a href="/about" className="text-foreground hover:text-oak-warm transition-colors">About Us</a>
+            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Candles</a>
+            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Jewelry</a>
+            <a href="/categories" className="text-foreground hover:text-oak-warm transition-colors">Gift Packs</a>
+            <a href="/about" className="text-foreground hover:text-oak-warm transition-colors">About</a>
             <a href="/contact" className="text-foreground hover:text-oak-warm transition-colors">Contact</a>
           </nav>
 

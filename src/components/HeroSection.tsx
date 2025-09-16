@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-living-room.jpg";
+import heroImage from "@/assets/candle-jewelry-hero.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,13 +8,13 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-6">
           <div className="text-sm font-medium text-oak-stone uppercase tracking-wider">
-            Authentic Indian Handicrafts
+            Premium Candles & Jewelry
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-            Beautiful Indian Home Decor
+            Light Up Your World
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Curated collection of authentic Indian handicrafts for your modern home.
+            Premium candles, elegant home decor gift packs & beautiful jewelry for every occasion.
           </p>
           <Button variant="hero" size="lg" className="mt-8">
             Shop Collection
@@ -25,7 +25,7 @@ const HeroSection = () => {
         <div className="relative">
             <img 
               src={heroImage} 
-              alt="Indian home decor in a cozy living room setting"
+              alt="Premium candles and jewelry display"
               className="w-full h-[500px] object-cover rounded-lg shadow-elegant"
             />
         </div>
