@@ -10,6 +10,9 @@ import CategoryManagement from '@/components/admin/CategoryManagement';
 import OrderManagement from '@/components/admin/OrderManagement';
 import UserManagement from '@/components/admin/UserManagement';
 import DashboardStats from '@/components/admin/DashboardStats';
+import AdvancedAnalytics from '@/components/admin/AdvancedAnalytics';
+import InventoryManagement from '@/components/admin/InventoryManagement';
+import ReviewManagement from '@/components/admin/ReviewManagement';
 
 const Admin = () => {
   const { isAdmin, loading } = useAuth();
@@ -46,14 +49,21 @@ const Admin = () => {
             <CardDescription>Manage products, categories, orders, and users</CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="products" className="w-full">
-              <TabsList className="grid w-full grid-cols-4">
+            <Tabs defaultValue="dashboard" className="w-full">
+              <TabsList className="grid w-full grid-cols-7 text-xs">
+                <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
                 <TabsTrigger value="products">Products</TabsTrigger>
                 <TabsTrigger value="categories">Categories</TabsTrigger>
+                <TabsTrigger value="inventory">Inventory</TabsTrigger>
                 <TabsTrigger value="orders">Orders</TabsTrigger>
+                <TabsTrigger value="reviews">Reviews</TabsTrigger>
                 <TabsTrigger value="users">Users</TabsTrigger>
               </TabsList>
               
+              <TabsContent value="dashboard" className="mt-6">
+                <AdvancedAnalytics />
+              </TabsContent>
+
               <TabsContent value="products" className="mt-6">
                 <ProductManagement />
               </TabsContent>
@@ -61,9 +71,17 @@ const Admin = () => {
               <TabsContent value="categories" className="mt-6">
                 <CategoryManagement />
               </TabsContent>
+
+              <TabsContent value="inventory" className="mt-6">
+                <InventoryManagement />
+              </TabsContent>
               
               <TabsContent value="orders" className="mt-6">
                 <OrderManagement />
+              </TabsContent>
+
+              <TabsContent value="reviews" className="mt-6">
+                <ReviewManagement />
               </TabsContent>
               
               <TabsContent value="users" className="mt-6">
