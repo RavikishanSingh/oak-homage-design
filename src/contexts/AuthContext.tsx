@@ -6,18 +6,25 @@ interface Profile {
   id: string;
   email: string;
   full_name: string;
-  role: string;
+}
+
+interface UserRole {
+  id: string;
+  user_id: string;
+  role: 'admin' | 'moderator' | 'user';
 }
 
 interface AuthContextType {
   user: User | null;
   session: Session | null;
   profile: Profile | null;
+  userRole: UserRole | null;
   loading: boolean;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   signUp: (email: string, password: string, fullName: string) => Promise<{ error: any }>;
   signOut: () => Promise<void>;
   isAdmin: boolean;
+  isModerator: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -34,6 +41,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [userRole, setUserRole] = useState<UserRole | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -44,8 +52,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(session?.user ?? null);
         
         if (session?.user) {
-          // Fetch user profile
+          // Fetch user profile and role
           setTimeout(async () => {
+            // Fetch profile
             const { data: profileData } = await supabase
               .from('profiles')
               .select('*')
@@ -53,9 +62,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               .single();
             
             setProfile(profileData);
+
+            // Fetch user role (highest priority role)
+            const { data: roleData } = await supabase
+              .from('user_roles')
+              .select('*')
+              .eq('user_id', session.user.id)
+              .order('role', { ascending: true })
+              .limit(1)
+              .maybeSingle();
+            
+            setUserRole(roleData);
           }, 0);
         } else {
           setProfile(null);
+          setUserRole(null);
         }
         
         setLoading(false);
@@ -100,17 +121,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     await supabase.auth.signOut();
   };
 
-  const isAdmin = profile?.role === 'admin';
+  const isAdmin = userRole?.role === 'admin';
+  const isModerator = userRole?.role === 'moderator';
 
   const value = {
     user,
     session,
     profile,
+    userRole,
     loading,
     signIn,
     signUp,
     signOut,
     isAdmin,
+    isModerator,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
