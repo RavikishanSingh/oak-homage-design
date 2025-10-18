@@ -10,6 +10,108 @@ import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { generateSlug } from "@/lib/utils";
 
+const categoryProducts = {
+  candles: [
+    {
+      id: 1,
+      name: "Lavender Scented Candle",
+      category: "Premium Candles",
+      price: 1299.00,
+      originalPrice: null,
+      image_url: "/src/assets/premium-candles.jpg",
+      rating: 5,
+      discount: null,
+      stock: 15,
+      description: "Premium lavender scented candle made from natural soy wax. Long-lasting fragrance with elegant glass container.",
+      slug: "lavender-candle"
+    },
+    {
+      id: 2,
+      name: "Vanilla Bean Candle",
+      category: "Premium Candles",
+      price: 1199.00,
+      originalPrice: 1599.00,
+      image_url: "/src/assets/soy-candle.jpg",
+      rating: 4,
+      discount: "25% OFF",
+      stock: 8,
+      description: "Warm vanilla bean scented candle perfect for creating a cozy atmosphere.",
+      slug: "vanilla-candle"
+    },
+    {
+      id: 3,
+      name: "Tea Light Set (6 pcs)",
+      category: "Candle Collection",
+      price: 899.00,
+      originalPrice: null,
+      image_url: "/src/assets/tea-lights.jpg",
+      rating: 5,
+      discount: null,
+      stock: 20,
+      description: "Set of 6 premium tea lights in elegant holders. Perfect for any occasion.",
+      slug: "tea-light-set"
+    }
+  ],
+  jewelry: [
+    {
+      id: 4,
+      name: "Gold Drop Earrings",
+      category: "Designer Jewelry",
+      price: 2499.00,
+      originalPrice: 3499.00,
+      image_url: "/src/assets/earrings-collection.jpg",
+      rating: 5,
+      discount: "29% OFF",
+      stock: 5,
+      description: "Stunning gold drop earrings with intricate details. Handcrafted with premium materials.",
+      slug: "gold-earrings"
+    },
+    {
+      id: 5,
+      name: "Silver Hoop Earrings",
+      category: "Fashion Jewelry",
+      price: 1599.00,
+      originalPrice: null,
+      image_url: "/src/assets/ceramic-bowl.jpg",
+      rating: 4,
+      discount: null,
+      stock: 12,
+      description: "Classic silver hoop earrings with a modern twist. Perfect for everyday wear.",
+      slug: "silver-hoops"
+    }
+  ],
+  "gift-packs": [
+    {
+      id: 6,
+      name: "Romantic Evening Gift Pack",
+      category: "Gift Collections",
+      price: 2899.00,
+      originalPrice: 3899.00,
+      image_url: "/src/assets/gift-packs.jpg",
+      rating: 5,
+      discount: "26% OFF",
+      stock: 7,
+      description: "Curated gift pack with premium candles and jewelry for a romantic evening.",
+      slug: "romantic-gift-pack"
+    },
+    {
+      id: 7,
+      name: "Home Decor Essentials",
+      category: "Gift Collections",
+      price: 1999.00,
+      originalPrice: null,
+      image_url: "/src/assets/ceramic-planter.jpg",
+      rating: 4,
+      discount: null,
+      stock: 10,
+      description: "Essential home decor items to create a beautiful and welcoming space.",
+      slug: "home-essentials"
+    }
+  ]
+};
+
+const allProducts = Object.values(categoryProducts).flat();
+
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<any>(null);
@@ -27,32 +129,29 @@ const ProductDetail = () => {
 
   const fetchProduct = async () => {
     try {
-      const { data, error } = await supabase
-        .from('products')
-        .select('*');
+      const hardcodedProduct = allProducts.find(p => p.slug === productId);
 
-      if (error) {
-        toast({
-          title: 'Error',
-          description: 'Failed to load product',
-          variant: 'destructive',
-        });
+      if (hardcodedProduct) {
+        setProduct(hardcodedProduct);
         setLoading(false);
         return;
       }
 
-      const product = data?.find(p => generateSlug(p.name) === productId);
+      const { data, error } = await supabase
+        .from('products')
+        .select('*');
 
-      if (product) {
-        setProduct(product);
+      if (!error && data) {
+        const supabaseProduct = data.find(p => generateSlug(p.name) === productId);
+        if (supabaseProduct) {
+          setProduct(supabaseProduct);
+          setLoading(false);
+          return;
+        }
       }
+
       setLoading(false);
     } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to load product',
-        variant: 'destructive',
-      });
       setLoading(false);
     }
   };
