@@ -230,7 +230,9 @@ const ProductManagement = () => {
                   id="image_url"
                   value={formData.image_url}
                   onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
+                  placeholder="e.g., /src/assets/product-image.jpg"
                 />
+                <p className="text-xs text-muted-foreground">Available images: premium-candles.jpg, ceramic-bowl.jpg, wooden-tray.jpg, earrings-collection.jpg, forest-print.jpg, tea-lights.jpg, ceramic-planter.jpg, stone-coasters.jpg</p>
               </div>
               
               <div className="flex items-center space-x-2">
@@ -269,11 +271,22 @@ const ProductManagement = () => {
             <TableBody>
               {products.map((product) => (
                 <TableRow key={product.id}>
-                  <TableCell className="font-medium">{product.name}</TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-3">
+                      {product.image_url && (
+                        <img src={product.image_url} alt={product.name} className="w-10 h-10 object-cover rounded" />
+                      )}
+                      <span className="font-medium">{product.name}</span>
+                    </div>
+                  </TableCell>
                   <TableCell>{product.category}</TableCell>
-                  <TableCell>${product.price}</TableCell>
+                  <TableCell>₹{product.price}</TableCell>
                   <TableCell>{product.stock}</TableCell>
-                  <TableCell>{product.featured ? 'Yes' : 'No'}</TableCell>
+                  <TableCell>
+                    <span className={`px-2 py-1 rounded-full text-xs ${product.featured ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
+                      {product.featured ? 'Featured' : 'Regular'}
+                    </span>
+                  </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end space-x-2">
                       <Button

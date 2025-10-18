@@ -99,9 +99,10 @@ const Header = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button asChild variant="ghost" size="icon">
-                <Link to="/auth">
-                  <User className="h-5 w-5" />
+              <Button asChild variant="ghost" size="sm" className="gap-2">
+                <Link to="/auth" className="flex items-center">
+                  <User className="h-4 w-4" />
+                  <span className="hidden sm:inline">Login</span>
                 </Link>
               </Button>
             )}
