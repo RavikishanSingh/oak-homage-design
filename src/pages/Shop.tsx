@@ -10,6 +10,7 @@ import { useProducts } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { generateSlug } from "@/lib/utils";
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
