@@ -42,7 +42,7 @@ const ProductGrid = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {products.slice(0, 5).map((product) => (
-            <Link key={product.id} to={`/product/${product.id}`} className="group cursor-pointer">
+            <Link key={product.id} to={`/product/${generateSlug(product.name)}`} className="group cursor-pointer">
               <div className="relative mb-4 overflow-hidden rounded-lg bg-oak-cream/20">
                 <img 
                   src={product.image_url || '/placeholder.svg'} 
