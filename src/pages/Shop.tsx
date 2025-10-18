@@ -137,9 +137,9 @@ const Shop = () => {
         ) : (
           <div className={`grid gap-6 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}>
             {filteredProducts.map((product) => (
-              <Link 
-                key={product.id} 
-                to={`/product/${product.id}`}
+              <Link
+                key={product.id}
+                to={`/product/${generateSlug(product.name)}`}
                 className={`group cursor-pointer ${viewMode === "list" ? "flex gap-6 p-4 border rounded-lg hover:shadow-lg transition-shadow" : ""}`}
               >
                 <div className={`relative overflow-hidden rounded-lg bg-oak-cream/20 ${viewMode === "list" ? "w-48 h-48 flex-shrink-0" : "mb-4"}`}>
