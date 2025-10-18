@@ -4,6 +4,7 @@ import { useProducts } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "react-router-dom";
+import { generateSlug } from "@/lib/utils";
 
 const ProductGrid = () => {
   const { products, loading } = useProducts();
