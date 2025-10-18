@@ -26,22 +26,35 @@ const ProductDetail = () => {
   }, [productId]);
 
   const fetchProduct = async () => {
-    const { data, error } = await supabase
-      .from('products')
-      .select('*')
-      .eq('id', productId)
-      .single();
+    try {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*');
 
-    if (error) {
+      if (error) {
+        toast({
+          title: 'Error',
+          description: 'Failed to load product',
+          variant: 'destructive',
+        });
+        setLoading(false);
+        return;
+      }
+
+      const product = data?.find(p => generateSlug(p.name) === productId);
+
+      if (product) {
+        setProduct(product);
+      }
+      setLoading(false);
+    } catch (error) {
       toast({
         title: 'Error',
         description: 'Failed to load product',
         variant: 'destructive',
       });
-    } else {
-      setProduct(data);
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const renderStars = (rating: number = 5) => {
