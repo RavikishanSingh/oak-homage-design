@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
+import { generateSlug } from "@/lib/utils";
 
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
