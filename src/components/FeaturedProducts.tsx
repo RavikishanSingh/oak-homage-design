@@ -1,10 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useProducts } from "@/hooks/useProducts";
+import { Skeleton } from "@/components/ui/skeleton";
 import premiumCandles from "@/assets/premium-candles.jpg";
 import earringsCollection from "@/assets/earrings-collection.jpg";
 import giftPacks from "@/assets/gift-packs.jpg";
 
 const FeaturedProducts = () => {
+  const { products: featuredProducts, loading } = useProducts(undefined, true);
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <Skeleton className="h-[400px] w-full rounded-lg" />
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6 space-y-16">

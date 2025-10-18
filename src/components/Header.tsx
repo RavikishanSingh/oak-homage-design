@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search, User, Heart, ShoppingBag, Menu, LogOut, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from '@/contexts/AuthContext';
+import { useCart } from '@/contexts/CartContext';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +14,7 @@ import {
 
 const Header = () => {
   const { user, profile, signOut, isAdmin } = useAuth();
+  const { cartCount } = useCart();
 
   const handleSignOut = async () => {
     await signOut();
@@ -108,9 +110,15 @@ const Header = () => {
               <Heart className="h-5 w-5" />
               <span className="absolute -top-1 -right-1 h-4 w-4 bg-oak-warm text-xs rounded-full flex items-center justify-center text-white">0</span>
             </Button>
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 bg-oak-warm text-xs rounded-full flex items-center justify-center text-white">0</span>
+            <Button asChild variant="ghost" size="icon" className="relative">
+              <Link to="/cart">
+                <ShoppingBag className="h-5 w-5" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 h-4 w-4 bg-oak-warm text-xs rounded-full flex items-center justify-center text-white">
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
